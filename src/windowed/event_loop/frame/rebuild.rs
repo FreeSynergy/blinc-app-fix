@@ -800,11 +800,15 @@ where
                     }
                     UpdateResult::VisualOnly => {
                         tracing::debug!("Incremental update: VisualOnly - skipping layout");
-                        // Props already updated in-place by incremental_update
+                        // Props already updated in-place by incremental_update. The new props carry no
+                        // CSS-derived style (class rules), so the stylesheet is applied again, or
+                        // every element that has its look from a class loses it (black window).
+                        existing_tree.apply_stylesheet_base_styles();
                     }
                     UpdateResult::LayoutChanged => {
                         // Layout changed - recompute layout
                         tracing::debug!("Incremental update: LayoutChanged - recomputing layout");
+                        existing_tree.apply_stylesheet_base_styles();
                         existing_tree.apply_stylesheet_layout_overrides();
                         existing_tree.compute_layout(windowed_ctx.width, windowed_ctx.height);
                         existing_tree.update_flip_bounds();
