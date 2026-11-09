@@ -8,7 +8,7 @@ All notable changes to `blinc_app` will be documented in this file.
 - `BlincComponent` generates companion reactive props with `IntoReactive` setters, and ordinary field hooks return `Signal`. Props preserve Signal and Computed bindings.
 
 ### Fixed
-- FreeSynergy: after an incremental update that changed only looks (`VisualOnly`) or the layout (`LayoutChanged`) the stylesheet's class rules are applied again; without it every element that had its background or text colour from a class lost it (black window after a rebuild, for example after pressing a button of a form).
+- FreeSynergy: after an incremental update that changed only looks (`VisualOnly`) or the layout (`LayoutChanged`) the stylesheet's class rules are applied again to the nodes whose props the update replaced (needs the patched `blinc_layout`, `restyle_replaced_nodes`); without it every element that had its background or text colour from a class lost it.
 - Desktop and web runners reconcile overlay focus before styling and share navigation handling. Web consumes navigation keys without browser defaults or duplicate text input; desktop maps Shift+F10 for context menus.
 
 ## [0.6.0] - 2026-11-04
