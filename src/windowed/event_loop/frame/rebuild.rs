@@ -807,7 +807,6 @@ where
                         // Layout changed - recompute layout
                         tracing::debug!("Incremental update: LayoutChanged - recomputing layout");
                         existing_tree.restyle_replaced_nodes(Some(&windowed_ctx.event_router));
-                        existing_tree.apply_stylesheet_layout_overrides();
                         existing_tree.compute_layout(windowed_ctx.width, windowed_ctx.height);
                         existing_tree.update_flip_bounds();
                     }
