@@ -1,3 +1,6 @@
+> **Hinweis:** Diese Fork-Hilfsbranch-Repo läuft aus: Änderungen sind als Pull-Requests nach upstream (project-blinc/Blinc) gegangen bzw. werden in FreeSynergy/Blinc geführt; keine weitere Pflege.
+> Die Änderungen sind als Pull-Requests nach upstream gegangen (project-blinc/Blinc #67 und #71, beide gemergt).
+
 # blinc_app
 
 > **Part of the [Blinc UI Framework](https://project-blinc.github.io/Blinc)**
